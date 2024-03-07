@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="img/favicon.png" />
+	<title>Number Converter</title>
+	<style>
+		body {
+			background-color: #000000;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			color: #333;
+			margin: 20px 0 0 0;
+			text-align: center;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin: 50px 0;
+		}
+
+		.box {
+			background-color: #ffffff;
+			border-radius: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			margin: 20px;
+			padding: 30px;
+			width: 300px;
+		}
+
+		label {
+			display: block;
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+
+		input[type="text"], select {
+			border: 2px solid #c30d0d;
+			border-radius: 10px;
+			font-size: 16px;
+			margin-bottom: 20px;
+			padding: 10px;
+			width: 100%;
+		}
+
+		button {
+			background-color: #000000;
+			border: none;
+			border-radius: 4px;
+			color: #ffffff;
+			cursor: pointer;
+			font-size: 16px;
+			margin-top: 20px;
+			padding: 10px;
+			width: 100%;
+		}
+
+		button:hover {
+			background-color: #0021b5;
+		}
+	</style>
+</head>
+<body>
+	<div style="text-align: center;">
+		<h2 style="font-family: cursive; font-size: 36px; color: #ff0000; text-align: center;">My Main Webpage</h2>
+		<a href="https://grishkhadka.com.np/"><button><img src="img/home icon.png" alt="Home icon" width="40" ></button></a>
+	</div>
+	<h1 style="font-family: cursive; font-size: 36px; color: #ff0000; text-align: center;">Number Converter By Grish Khadka</h1>
+	<div class="container">
+		<div class="box">
+			<label for="decimal">Decimal</label>
+			<input type="text" id="decimal" placeholder="Enter a decimal number...">
+			<label for="binary">Binary</label>
+			<input type="text" id="binary" placeholder="Binary number...">
+			<label for="octal">Octal</label>
+			<input type="text" id="octal" placeholder="Octal number...">
+			<label for="hexadecimal">Hexadecimal</label>
+			<input type="text" id="hexadecimal" placeholder="Hexadecimal number...">
+			<button id="convert">Convert</button>
+		</div>
+		<div class="box">
+			<label for="binary2">Binary</label>
+			<input type="text" id="binary2" placeholder="Enter a binary number...">
+			<label for="decimal2">Decimal</label>
+			<input type="text" id="decimal2" placeholder="Decimal number...">
+			<label for="octal2">Octal</label>
+			<input type="text" id="octal2" placeholder="Octal number...">
+			<label for="hexadecimal2">Hexadecimal</label>
+			<input type="text" id="hexadecimal2" placeholder="Hexadecimal number...">
+			<button id="convert2">Convert</button>
+		</div>
+		<div class="box">
+			<label for="octal3">Octal</label>
+			<input type="text" id="octal3" placeholder="Enter an octal number...">
+			<label for="hexadecimal3">Hexadecimal</label>
+			<input type="text" id="hexadecimal3" placeholder="Hexadecimal number...">
+			<label for="decimal3">Decimal</label>
+			<input type="text" id="decimal3" placeholder="Decimal number...">
+			<label for="binary3">Binary</label>
+			<input type="text" id="binary3" placeholder="Binary number...">
+			<button id="convert3">Convert</button>
+			</div>
+			<div class="box">
+			<label for="hexadecimal4">Hexadecimal</label>
+			<input type="text" id="hexadecimal4" placeholder="Enter a hexadecimal number...">
+			<label for="binary4">Binary</label>
+			<input type="text" id="binary4" placeholder="Binary number...">
+			<label for="octal4">Octal</label>
+			<input type="text" id="octal4" placeholder="Octal number...">
+			<label for="decimal4">Decimal</label>
+			<input type="text" id="decimal4" placeholder="Decimal number...">
+			<button id="convert4">Convert</button>
+			</div>
+			</div>
+			<script>
+				function decimalToBinaryOctalHexadecimal() {
+					let decimal = document.getElementById("decimal").value;
+					let binary = (decimal >>> 0).toString(2);
+					let octal = (decimal >>> 0).toString(8);
+					let hexadecimal = (decimal >>> 0).toString(16).toUpperCase();
+					document.getElementById("binary").value = binary;
+					document.getElementById("octal").value = octal;
+					document.getElementById("hexadecimal").value = hexadecimal;
+				}
+			
+				function binaryToDecimalOctalHexadecimal() {
+					let binary = document.getElementById("binary2").value;
+					let decimal = parseInt(binary, 2);
+					let octal = decimal.toString(8);
+					let hexadecimal = decimal.toString(16).toUpperCase();
+					document.getElementById("decimal2").value = decimal;
+					document.getElementById("octal2").value = octal;
+					document.getElementById("hexadecimal2").value = hexadecimal;
+				}
+			
+				function octalToDecimalBinaryHexadecimal() {
+					let octal = document.getElementById("octal3").value;
+					let decimal = parseInt(octal, 8);
+					let binary = (decimal >>> 0).toString(2);
+					let hexadecimal = decimal.toString(16).toUpperCase();
+					document.getElementById("decimal3").value = decimal;
+					document.getElementById("binary3").value = binary;
+					document.getElementById("hexadecimal3").value = hexadecimal;
+				}
+			
+				function hexadecimalToDecimalBinaryOctal() {
+					let hexadecimal = document.getElementById("hexadecimal4").value;
+					let decimal = parseInt(hexadecimal, 16);
+					let binary = (decimal >>> 0).toString(2);
+					let octal = decimal.toString(8);
+					document.getElementById("binary4").value = binary;
+					document.getElementById("octal4").value = octal;
+					document.getElementById("decimal4").value = decimal;
+				}
+			
+				document.getElementById("convert").addEventListener("click", decimalToBinaryOctalHexadecimal);
+				document.getElementById("convert2").addEventListener("click", binaryToDecimalOctalHexadecimal);
+				document.getElementById("convert3").addEventListener("click", octalToDecimalBinaryHexadecimal);
+				document.getElementById("convert4").addEventListener("click", hexadecimalToDecimalBinaryOctal);
+			</script>
+			</body>
+			</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blockchain Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Blockchain Demo</h1>
+        <div class="form-group">
+            <label for="sender">Sender:</label>
+            <input type="text" id="sender" placeholder="Enter sender address">
+        </div>
+        <div class="form-group">
+            <label for="recipient">Recipient:</label>
+            <input type="text" id="recipient" placeholder="Enter recipient address">
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount">
+        </div>
+        <button onclick="createTransaction()">Create Transaction</button>
+        <button onclick="minePendingTransactions()">Mine Block</button>
+        <button onclick="validateChain()">Validate Chain</button>
+        <div id="blockchain"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="blockchain.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

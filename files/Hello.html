@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fake Hacking Demo</title>
+<style>
+    body {
+        background-color: black;
+        color: green;
+        font-family: monospace;
+        overflow: hidden; /* to prevent scrolling */
+    }
+
+    #hack-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    #hack-text {
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<div id="hack-container">
+    <div id="hack-text"></div>
+</div>
+<script>
+    const hackText = [
+        "Accessing mainframe...",
+        "Bypassing firewall...",
+        "Decrypting data...",
+        "Injecting malware...",
+        "Hacking into system...",
+        "Cracking encryption...",
+        "Initiating cyber attack...",
+        "Downloading files...",
+        "Planting backdoor...",
+        "Executing code...",
+        "Securing connection...",
+        "Disabling security protocols...",
+        "Establishing control...",
+        "Concealing identity...",
+        "Exploiting vulnerabilities..."
+    ];
+
+    const hackTextElement = document.getElementById('hack-text');
+
+    const relatedWords = [
+        "hack", "cybersecurity", "encryption", "malware", "firewall", "vulnerability", "phishing",
+        "hacker", "backdoor", "trojan", "exploit", "cyberattack", "password", "security", "data breach",
+        "DDoS", "exploit", "brute force", "social engineering", "cybercrime", "identity theft", "zero-day",
+        "ransomware", "worm", "keylogger", "rootkit", "SQL injection", "spoofing", "botnet", "adware"
+    ];
+
+    function getRandomTime(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function hack() {
+        let currentIndex = 0;
+        let hackInterval = setInterval(() => {
+            if (currentIndex < hackText.length) {
+                hackTextElement.innerHTML += `<p>${hackText[currentIndex]}</p>`;
+                currentIndex++;
+            } else {
+                clearInterval(hackInterval);
+                // After 20 seconds, display "Successfully hacked"
+                setTimeout(() => {
+                    hackTextElement.innerHTML = "<h2>Successfully hacked!</h2>";
+                }, 20000);
+            }
+        }, getRandomTime(100, 500));
+
+        // Generate related words for 20 seconds
+        let generateRelatedWordsInterval = setInterval(() => {
+            let randomWord = relatedWords[Math.floor(Math.random() * relatedWords.length)];
+            hackTextElement.innerHTML += `<span>${randomWord}</span> `;
+        }, getRandomTime(500, 1000));
+
+        // Stop generating related words after 20 seconds
+        setTimeout(() => {
+            clearInterval(generateRelatedWordsInterval);
+        }, 20000);
+    }
+
+    // Display the message on screen and start hacking immediately
+    hackTextElement.innerHTML = "<h2>Your system is being hacked by Grish Khadka</h2>";
+    setTimeout(hack, 3000); // Start hacking after 3 seconds
+
+    // Disable right-clicking
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable Ctrl+U
+    document.onkeydown = function(e) {
+        if (e.ctrlKey && e.keyCode === 85) {
+            return false;
+        }
+    };
+</script>
+</body>
+</html>
